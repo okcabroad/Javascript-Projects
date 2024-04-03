@@ -1,0 +1,21 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1{
+    font-weight:900;
+}
+
+.inputContainer{
+    display: flex;
+    align-items: center;
+    margin:  20px;
+}
+
+.formInput{
+    width: 100vw;
+    border: 0px;
+}
+.deleteButton {
+    margin-left: 5px;
+}
