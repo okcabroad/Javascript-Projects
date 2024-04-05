@@ -1,0 +1,45 @@
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+.container{
+    background-color: lightgray;
+    padding: 100px;
+    border-radius: 10px;
+}
+
+h1{
+    text-align: center;
+}
+
+.questionContainer{
+
+}
+
+.question{
+    color: blue;
+}
+
+.optionsContainer{
+    background-color: greenyellow;
+}
+
+.answersContainer{
+    background-color: blue;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-radius: 5px;
+}
+
+.button{
+    padding: 20px;
+    border-radius: 5px;
+}
