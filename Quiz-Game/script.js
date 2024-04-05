@@ -42,16 +42,16 @@ const options = document.querySelector('.options')
 const answersContainer = document.querySelector('.answersContainer');
 
 const startButton = document.querySelector('.startButton'); 
-const buttonA = document.querySelector('.buttonA');
-const buttonB = document.querySelector('.buttonB');
-const buttonC = document.querySelector('.buttonC');
-const buttonD = document.querySelector('.buttonD');
 
-let questionCompleted =[];
+
+
+// Let variables
+let thisTurnNumber;
+let score = 0;
 
 //Event Listeners
-startButton.addEventListener('click', startGame);
-
+startButton.addEventListener('click', startGame, );
+answersContainer.addEventListener('click', checkOption);
 
 
 //Functions
@@ -70,31 +70,8 @@ function shuffle(array) {
     return array;
 }
 
-
-// function generateScrambleOptions(){
-//     //random number
-//     const thisTurnOptions = [];
-//     const HTMLOptions = ``;
-//     const ABCD = ['A', 'B', 'C', 'D'];
-//     thisTurnOptions.push(
-//         quizQuestions[thisTurnNumber].correctAnswer,
-//         quizQuestions[thisTurnNumber].wrongAnswer[0],
-//         quizQuestions[thisTurnNumber].wrongAnswer[1],
-//         quizQuestions[thisTurnNumber].wrongAnswer[2]
-//         );
-
-//     shuffledOptions = shuffle(thisTurnOptions)
-
-//     for(let i = 0; i < 4; i++){
-//         HTMLOptions += `<p class="options"> ${ABCD[i]}. ${shuffledOptions[i]}</p>`;
-//     }
-
-//     return HTMLOptions;
-// }
-
-
 function startGame(){
-    const thisTurnNumber = generateRandomNumber()
+    thisTurnNumber = generateRandomNumber()
     question.textContent = quizQuestions[thisTurnNumber].question;
 
     function generateScrambleOptions(){
@@ -111,7 +88,7 @@ function startGame(){
         shuffledOptions = shuffle(thisTurnOptions)
     
         for(let i = 0; i < 4; i++){
-            HTMLOptions += `<p class="options"> ${ABCD[i]}. ${shuffledOptions[i]}</p>`;
+            HTMLOptions += `<p class="options option${ABCD[i]}"> ${ABCD[i]}. ${shuffledOptions[i]}</p>`;
         }
     
         return HTMLOptions;
@@ -123,12 +100,34 @@ function startGame(){
 
     startButton.remove()
     answersContainer.innerHTML = `
-        <button class="button buttonA"> A. </button>
-        <button class="button buttonB"> B. </button>
-        <button class="button buttonC"> C. </button>
-        <button class="button buttonD"> D. </button>
+        <button class="button optionA"> A. </button>
+        <button class="button optionB"> B. </button>
+        <button class="button optionC"> C. </button>
+        <button class="button optionD"> D. </button>
     `
-
-
 }
 
+function checkOption(event){
+    const buttonText = event.target.textContent
+    let targetElementText;
+
+    const childrenElements = optionsContainer.children;
+    for(let i = 0; i < childrenElements.length; i++){
+        if(childrenElements[i].textContent.includes(buttonText)){
+            targetElementText = childrenElements[i].textContent
+            targetElementText = targetElementText.replace(/[A-D]\.\s*/g, '');
+            
+        }
+    }
+
+    if(targetElementText.includes(quizQuestions[thisTurnNumber].correctAnswer)){
+        console.log('correct answer');
+        score += 1;
+        alert('correct!');
+    
+    } 
+    else{
+        console.log('wrong answer');
+    }
+    
+}
