@@ -42,10 +42,10 @@ const options = document.querySelector('.options')
 const answersContainer = document.querySelector('.answersContainer');
 
 const startButton = document.querySelector('.startButton'); 
-const button1 = document.querySelector('.button1');
-const button2 = document.querySelector('.button2');
-const button3 = document.querySelector('.button3');
-const button4 = document.querySelector('.button4');
+const buttonA = document.querySelector('.buttonA');
+const buttonB = document.querySelector('.buttonB');
+const buttonC = document.querySelector('.buttonC');
+const buttonD = document.querySelector('.buttonD');
 
 let questionCompleted =[];
 
@@ -61,19 +61,74 @@ function generateRandomNumber(){
     return randomNumber;
 }
 
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
+
+// function generateScrambleOptions(){
+//     //random number
+//     const thisTurnOptions = [];
+//     const HTMLOptions = ``;
+//     const ABCD = ['A', 'B', 'C', 'D'];
+//     thisTurnOptions.push(
+//         quizQuestions[thisTurnNumber].correctAnswer,
+//         quizQuestions[thisTurnNumber].wrongAnswer[0],
+//         quizQuestions[thisTurnNumber].wrongAnswer[1],
+//         quizQuestions[thisTurnNumber].wrongAnswer[2]
+//         );
+
+//     shuffledOptions = shuffle(thisTurnOptions)
+
+//     for(let i = 0; i < 4; i++){
+//         HTMLOptions += `<p class="options"> ${ABCD[i]}. ${shuffledOptions[i]}</p>`;
+//     }
+
+//     return HTMLOptions;
+// }
 
 
 function startGame(){
     const thisTurnNumber = generateRandomNumber()
     question.textContent = quizQuestions[thisTurnNumber].question;
 
-    options.remove();
-    optionsContainer.innerHTML = `
-        <p class="options">${quizQuestions[thisTurnNumber].correctAnswer}</p>
-        <p class="options">${quizQuestions[thisTurnNumber].wrongAnswer[0]}</p>
-        <p class="options">${quizQuestions[thisTurnNumber].wrongAnswer[1]}</p>
-        <p class="options">${quizQuestions[thisTurnNumber].wrongAnswer[2]}</p>
-    `
-}
+    function generateScrambleOptions(){
+        let thisTurnOptions = [];
+        let HTMLOptions = ``;
+        const ABCD = ['A', 'B', 'C', 'D'];
+        thisTurnOptions.push(
+            quizQuestions[thisTurnNumber].correctAnswer,
+            quizQuestions[thisTurnNumber].wrongAnswer[0],
+            quizQuestions[thisTurnNumber].wrongAnswer[1],
+            quizQuestions[thisTurnNumber].wrongAnswer[2]
+            );
+    
+        shuffledOptions = shuffle(thisTurnOptions)
+    
+        for(let i = 0; i < 4; i++){
+            HTMLOptions += `<p class="options"> ${ABCD[i]}. ${shuffledOptions[i]}</p>`;
+        }
+    
+        return HTMLOptions;
+    }
 
+    options.remove();
+    optionsContainer.innerHTML = generateScrambleOptions()
+
+
+    startButton.remove()
+    answersContainer.innerHTML = `
+        <button class="button buttonA"> A. </button>
+        <button class="button buttonB"> B. </button>
+        <button class="button buttonC"> C. </button>
+        <button class="button buttonD"> D. </button>
+    `
+
+
+}
 
