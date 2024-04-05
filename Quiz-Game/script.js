@@ -35,6 +35,7 @@ const quizQuestions = [
 
 
 //DOM variables
+const container = document.querySelector('.container');
 const questionContainer = document.querySelector('.questionContainer');
 const question = document.querySelector('.question');
 const optionsContainer = document.querySelector('.optionsContainer');
@@ -194,4 +195,22 @@ function displayScore(){
         answersContainer.removeChild(answersContainer.firstChild);
     }
 
+    if(score >= 3){
+        const img = document.createElement('img');
+        img.src = 'smile.jpg';
+        img.classList.add('img');
+        optionsContainer.appendChild(img);
+    }
+    else {
+        const img = document.createElement('img');
+        img.src = 'sad.jpg';
+        img.classList.add('img');
+        optionsContainer.appendChild(img);
+    }
+
+    nextQuestion.remove();
+    reset.remove();
+
+    container.classList.remove('container');
+    container.classList.add('finalContainer');
 }
