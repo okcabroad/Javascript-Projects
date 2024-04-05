@@ -31,7 +31,223 @@ const quizQuestions = [
         correctAnswer: ['5'],
         wrongAnswer: ['7', '6', '9']
     },
-]
+    {
+        questionNumber: 7,
+        question: "What was the name of the crime boss who was head of the feared Chicago Outfit?",
+        correctAnswer: ['Al Capone'],
+        wrongAnswer: ['John Gotti', 'Pablo Escobar', 'Vito Genovese']
+    },
+    {
+        questionNumber: 8,
+        question: "What year was the United Nations established?",
+        correctAnswer: ['1945'],
+        wrongAnswer: ['1919', '1939', '1955']
+    },
+    {
+        questionNumber: 9,
+        question: "Who has won the most total Academy Awards?",
+        correctAnswer: ['Walt Disney'],
+        wrongAnswer: ['Steven Spielberg', 'Martin Scorsese', 'Alfred Hitchcock']
+    },
+    {
+        questionNumber: 10,
+        question: "What artist has the most streams on Spotify?",
+        correctAnswer: ['Drake'],
+        wrongAnswer: ['Ed Sheeran', 'Ariana Grande', 'Justin Bieber']
+    },
+    {
+        questionNumber: 11,
+        question: "How many minutes are in a full week?",
+        correctAnswer: ['10,080'],
+        wrongAnswer: ['8,640', '11,760', '12,960']
+    },
+    {
+        questionNumber: 12,
+        question: "What car manufacturer had the highest revenue in 2020?",
+        correctAnswer: ['Volkswagen'],
+        wrongAnswer: ['Toyota', 'General Motors', 'Ford']
+    },
+    {
+        questionNumber: 13,
+        question: "What company was originally called 'Cadabra'?",
+        correctAnswer: ['Amazon'],
+        wrongAnswer: ['eBay', 'Alibaba', 'Google']
+    },
+    {
+        questionNumber: 14,
+        question: "How many faces does a Dodecahedron have?",
+        correctAnswer: ['12'],
+        wrongAnswer: ['8', '10', '14']
+    },
+    {
+        questionNumber: 15,
+        question: "Queen guitarist Brian May is also an expert in what scientific field?",
+        correctAnswer: ['Astrophysics'],
+        wrongAnswer: ['Biology', 'Chemistry', 'Geology']
+    },
+    {
+        questionNumber: 16,
+        question: "Aureolin is a shade of what color?",
+        correctAnswer: ['Yellow'],
+        wrongAnswer: ['Blue', 'Green', 'Red']
+    },
+    {
+        questionNumber: 17,
+        question: "How many ghosts chase Pac-Man at the start of each game?",
+        correctAnswer: ['4'],
+        wrongAnswer: ['3', '5', '6']
+    },
+    {
+        questionNumber: 18,
+        question: "What Renaissance artist is buried in Rome's Pantheon?",
+        correctAnswer: ['Raphael'],
+        wrongAnswer: ['Leonardo da Vinci', 'Michelangelo', 'Donatello']
+    },
+    {
+        questionNumber: 19,
+        question: "What shoe brand makes the 'Mexico 66'?",
+        correctAnswer: ['Onitsuka Tiger'],
+        wrongAnswer: ['Nike', 'Adidas', 'Puma']
+    },
+    {
+        questionNumber: 20,
+        question: "What game studio makes the Red Dead Redemption series?",
+        correctAnswer: ['Rockstar Games'],
+        wrongAnswer: ['Ubisoft', 'Electronic Arts', 'Activision']
+    },
+    {
+        questionNumber: 21,
+        question: "Who was the last Tsar of Russia?",
+        correctAnswer: ['Nicholas II'],
+        wrongAnswer: ['Peter the Great', 'Ivan the Terrible', 'Catherine the Great']
+    },
+    {
+        questionNumber: 22,
+        question: "What character have both Robert Downey Jr. and Benedict Cumberbatch played?",
+        correctAnswer: ['Sherlock Holmes'],
+        wrongAnswer: ['James Bond', 'Batman', 'Harry Potter']
+    },
+    {
+        questionNumber: 23,
+        question: "What country drinks the most coffee per capita?",
+        correctAnswer: ['Finland'],
+        wrongAnswer: ['Italy', 'Brazil', 'United States']
+    },
+    {
+        questionNumber: 24,
+        question: "Which planet in the Milky Way is the hottest?",
+        correctAnswer: ['Venus'],
+        wrongAnswer: ['Mercury', 'Jupiter', 'Mars']
+    },
+    {
+        questionNumber: 25,
+        question: "What is the 4th letter of the Greek alphabet?",
+        correctAnswer: ['Delta'],
+        wrongAnswer: ['Alpha', 'Beta', 'Gamma']
+    },
+    {
+        questionNumber: 26,
+        question: "What sports car company manufactures the 911?",
+        correctAnswer: ['Porsche'],
+        wrongAnswer: ['Ferrari', 'Lamborghini', 'Bugatti']
+    },
+    {
+        questionNumber: 27,
+        question: "What city is known as 'The Eternal City'?",
+        correctAnswer: ['Rome'],
+        wrongAnswer: ['Athens', 'Jerusalem', 'Paris']
+    },
+    {
+        questionNumber: 28,
+        question: "Roald Amundsen was the first man to reach the South Pole, but where was he from?",
+        correctAnswer: ['Norway'],
+        wrongAnswer: ['Sweden', 'Denmark', 'Finland']
+    },
+        {
+            questionNumber: 29,
+            question: "What is the highest-rated film on IMDb as of January 1st, 2022?",
+            correctAnswer: ['The Shawshank Redemption'],
+            wrongAnswer: ['The Godfather', 'Pulp Fiction', 'The Dark Knight']
+        },
+        {
+            questionNumber: 30,
+            question: "Who discovered that the Earth revolves around the sun?",
+            correctAnswer: ['Nicolaus Copernicus'],
+            wrongAnswer: ['Galileo Galilei', 'Isaac Newton', 'Johannes Kepler']
+        },
+        {
+            questionNumber: 31,
+            question: "What company was initially known as 'Blue Ribbon Sports'?",
+            correctAnswer: ['Nike'],
+            wrongAnswer: ['Adidas', 'Puma', 'Under Armour']
+        },
+        {
+            questionNumber: 32,
+            question: "What art form is described as 'decorative handwriting or handwritten lettering'?",
+            correctAnswer: ['Calligraphy'],
+            wrongAnswer: ['Graffiti', 'Typography', 'Sculpture']
+        },
+        {
+            questionNumber: 33,
+            question: "What country has won the most World Cups?",
+            correctAnswer: ['Brazil'],
+            wrongAnswer: ['Germany', 'Italy', 'Argentina']
+        },
+        {
+            questionNumber: 34,
+            question: "Complete the following lyrics - 'I should have changed that stupid lock.....'",
+            correctAnswer: ['I should have made you leave your key'],
+            wrongAnswer: ['I should have kicked you out that day', 'I should have called the cops', 'I should have changed the code']
+        },
+        {
+            questionNumber: 35,
+            question: "What is a group of pandas known as?",
+            correctAnswer: ['An embarrassment'],
+            wrongAnswer: ['A pack', 'A flock', 'A herd']
+        },
+        {
+            questionNumber: 36,
+            question: "What European country experienced the highest rate of population decline from 2015 - 2020?",
+            correctAnswer: ['Lithuania'],
+            wrongAnswer: ['Germany', 'Italy', 'Greece']
+        },
+        {
+            questionNumber: 37,
+            question: "How many bones do we have in an ear?",
+            correctAnswer: ['3'],
+            wrongAnswer: ['2', '4', '5']
+        },
+        {
+            questionNumber: 38,
+            question: "Who famously crossed the Alps with elephants on the way to war with the Romans?",
+            correctAnswer: ['Hannibal'],
+            wrongAnswer: ['Julius Caesar', 'Alexander the Great', 'Attila the Hun']
+        },
+        {
+            questionNumber: 39,
+            question: "True or False: Halloween originated as an ancient Irish festival.",
+            correctAnswer: ['True'],
+            wrongAnswer: ['False']
+        },
+        {
+            questionNumber: 40,
+            question: "What Netflix show had the most streaming views in 2021?",
+            correctAnswer: ['Squid Game'],
+            wrongAnswer: ['The Crown', 'Stranger Things', 'Money Heist']
+        },
+        {
+            questionNumber: 41,
+            question: "Which Grammy-nominated New York rapper died in April of 2021?",
+            correctAnswer: ['DMX'],
+            wrongAnswer: ['Nipsey Hussle', 'Juice WRLD', 'Mac Miller']
+        },
+        {
+            questionNumber: 42,
+            question: "What software company is headquartered in Redmond, Washington?",
+            correctAnswer: ['Microsoft'],
+            wrongAnswer: ['Apple', 'Google', 'Facebook']
+        }
+];
 
 
 //DOM variables
@@ -98,7 +314,6 @@ function generateScrambleOptions(){
 }
 
 function startGame(){
-    turns += 1;
     nextQuestion.classList.remove('hide');
     reset.classList.remove('hide');   
 
@@ -211,6 +426,20 @@ function displayScore(){
     nextQuestion.remove();
     reset.remove();
 
-    container.classList.remove('container');
-    container.classList.add('finalContainer');
+    // container.classList.remove('container');
+    optionsContainer.classList.remove('optionsContainer');
+
+    generatePlayAgain();
+}
+
+function generatePlayAgain(){
+    score = 0;
+    turns = 0;
+    const playAgain = document.createElement('button')
+    playAgain.textContent = 'Play Again?';
+    playAgain.classList.add('playAgain');
+    playAgain.classList.add('button');
+    answersContainer.appendChild(playAgain);
+    const playAgainButton = document.querySelector('.playAgain');
+    playAgainButton.addEventListener('click', startGame);
 }
