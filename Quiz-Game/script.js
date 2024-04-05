@@ -423,8 +423,8 @@ function displayScore(){
         optionsContainer.appendChild(img);
     }
 
-    nextQuestion.remove();
-    reset.remove();
+    nextQuestion.classList.add('hide');
+    reset.classList.add('hide');
 
     // container.classList.remove('container');
     optionsContainer.classList.remove('optionsContainer');
@@ -435,7 +435,8 @@ function displayScore(){
 function generatePlayAgain(){
     score = 0;
     turns = 0;
-    const playAgain = document.createElement('button')
+    optionsContainer.classList.add('optionsContainer');
+    const playAgain = document.createElement('button');
     playAgain.textContent = 'Play Again?';
     playAgain.classList.add('playAgain');
     playAgain.classList.add('button');

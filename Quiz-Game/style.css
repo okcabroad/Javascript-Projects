@@ -66,8 +66,8 @@ h1{
 }
 
 .nextButtons{
-    width: 120px;
+    padding: 15px;
     background-color: yellow;
+    border-radius: 5px;
 }
-
 
