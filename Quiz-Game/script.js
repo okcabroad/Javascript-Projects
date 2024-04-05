@@ -40,8 +40,11 @@ const question = document.querySelector('.question');
 const optionsContainer = document.querySelector('.optionsContainer');
 const options = document.querySelector('.options')
 const answersContainer = document.querySelector('.answersContainer');
+const nextContainer = document.querySelector('.nextContainer');
 
 const startButton = document.querySelector('.startButton'); 
+const nextQuestion = document.querySelector('.nextQuestion');
+const reset = document.querySelector('.reset');
 
 
 
@@ -52,6 +55,7 @@ let score = 0;
 //Event Listeners
 startButton.addEventListener('click', startGame, );
 answersContainer.addEventListener('click', checkOption);
+
 
 
 //Functions
@@ -105,9 +109,15 @@ function startGame(){
         <button class="button optionC"> C. </button>
         <button class="button optionD"> D. </button>
     `
+    nextContainer.innerHTML = `
+        <button class="nextButtons nextQuestion">Next Question</button>
+        <button class="nextButtons reset">Reset</button>
+    `
+
 }
 
 function checkOption(event){
+    const button = event.target;
     const buttonText = event.target.textContent
     let targetElementText;
 
@@ -121,13 +131,17 @@ function checkOption(event){
     }
 
     if(targetElementText.includes(quizQuestions[thisTurnNumber].correctAnswer)){
-        console.log('correct answer');
+        // console.log('correct answer');
         score += 1;
-        alert('correct!');
+        button.classList.remove("hover");
+        button.classList.add("correct");
     
     } 
     else{
-        console.log('wrong answer');
+        // console.log('wrong answer');
+        button.classList.add("false");
+
     }
+   
     
 }
