@@ -8,6 +8,10 @@ body{
 
 }
 
+.hide{
+    display: none;
+}
+
 .container{
     background-color: lightgray;
     padding: 100px;

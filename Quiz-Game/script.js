@@ -46,17 +46,19 @@ const startButton = document.querySelector('.startButton');
 const nextQuestion = document.querySelector('.nextQuestion');
 const reset = document.querySelector('.reset');
 
-
-
 // Let variables
 let thisTurnNumber;
 let score = 0;
+let turns = 0;
 
-//Event Listeners
+//Event Listeners + initialization
+nextQuestion.classList.add('hide');
+reset.classList.add('hide');
+
 startButton.addEventListener('click', startGame, );
 answersContainer.addEventListener('click', checkOption);
-
-
+nextQuestion.addEventListener('click', generateNextQuestion);
+reset.addEventListener('click', resetScore);
 
 //Functions
 
@@ -74,29 +76,33 @@ function shuffle(array) {
     return array;
 }
 
+function generateScrambleOptions(){
+    let thisTurnOptions = [];
+    let HTMLOptions = ``;
+    const ABCD = ['A', 'B', 'C', 'D'];
+    thisTurnOptions.push(
+        quizQuestions[thisTurnNumber].correctAnswer,
+        quizQuestions[thisTurnNumber].wrongAnswer[0],
+        quizQuestions[thisTurnNumber].wrongAnswer[1],
+        quizQuestions[thisTurnNumber].wrongAnswer[2]
+        );
+
+    shuffledOptions = shuffle(thisTurnOptions)
+
+    for(let i = 0; i < 4; i++){
+        HTMLOptions += `<p class="options option${ABCD[i]}"> ${ABCD[i]}. ${shuffledOptions[i]}</p>`;
+    }
+
+    return HTMLOptions;
+}
+
 function startGame(){
+    turns += 1;
+    nextQuestion.classList.remove('hide');
+    reset.classList.remove('hide');   
+
     thisTurnNumber = generateRandomNumber()
     question.textContent = quizQuestions[thisTurnNumber].question;
-
-    function generateScrambleOptions(){
-        let thisTurnOptions = [];
-        let HTMLOptions = ``;
-        const ABCD = ['A', 'B', 'C', 'D'];
-        thisTurnOptions.push(
-            quizQuestions[thisTurnNumber].correctAnswer,
-            quizQuestions[thisTurnNumber].wrongAnswer[0],
-            quizQuestions[thisTurnNumber].wrongAnswer[1],
-            quizQuestions[thisTurnNumber].wrongAnswer[2]
-            );
-    
-        shuffledOptions = shuffle(thisTurnOptions)
-    
-        for(let i = 0; i < 4; i++){
-            HTMLOptions += `<p class="options option${ABCD[i]}"> ${ABCD[i]}. ${shuffledOptions[i]}</p>`;
-        }
-    
-        return HTMLOptions;
-    }
 
     options.remove();
     optionsContainer.innerHTML = generateScrambleOptions()
@@ -108,10 +114,6 @@ function startGame(){
         <button class="button optionB"> B. </button>
         <button class="button optionC"> C. </button>
         <button class="button optionD"> D. </button>
-    `
-    nextContainer.innerHTML = `
-        <button class="nextButtons nextQuestion">Next Question</button>
-        <button class="nextButtons reset">Reset</button>
     `
 
 }
@@ -131,17 +133,65 @@ function checkOption(event){
     }
 
     if(targetElementText.includes(quizQuestions[thisTurnNumber].correctAnswer)){
-        // console.log('correct answer');
         score += 1;
-        button.classList.remove("hover");
         button.classList.add("correct");
     
     } 
     else{
-        // console.log('wrong answer');
         button.classList.add("false");
-
     }
-   
     
+}
+
+
+function generateNextQuestion(){
+    turns += 1;
+    if(turns >= 5){
+        displayScore();
+        return;
+    }
+    
+    //add a new question
+    thisTurnNumber = generateRandomNumber()
+    question.textContent = quizQuestions[thisTurnNumber].question;
+
+    //remove current options and add new ones
+    while(optionsContainer.firstChild) {
+        optionsContainer.removeChild(optionsContainer.firstChild);
+    }
+    optionsContainer.innerHTML = generateScrambleOptions()
+    
+    //
+    removeClassesFromChildren(answersContainer, 'correct');
+    removeClassesFromChildren(answersContainer, 'false');
+    
+}
+
+function removeClassesFromChildren(parentElement, className) {
+    const children = parentElement.children;
+    for (let i = 0; i < children.length; i++) {
+        children[i].classList.remove(className);
+    }
+}
+
+function resetScore(){
+    score = 0;
+    turns = 0;
+    generateNextQuestion();
+}
+
+
+function displayScore(){
+    console.log('final score');
+    question.textContent = `Your Final Score is: ${score}/${turns}`;
+
+    //remove options
+    while(optionsContainer.firstChild) {
+        optionsContainer.removeChild(optionsContainer.firstChild);
+    }
+    //remove buttons
+    while(answersContainer.firstChild) {
+        answersContainer.removeChild(answersContainer.firstChild);
+    }
+
 }
