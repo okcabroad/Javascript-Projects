@@ -1,0 +1,67 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    display: flex;
+    background-color: lightgray;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 50vw;
+}
+
+.leftContainer{
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+}
+
+.calculatorContainer{
+ background-color:rgb(234, 255, 47);
+ padding: 10px;
+ padding-top: 50px;
+ padding-bottom: 50px;
+ border-radius: 10px;
+}
+
+.heightContainer{
+    margin-bottom: 30px;
+}
+
+.weightContainer{
+    margin-bottom: 30px;
+}
+
+.bmiButton{
+    color: white;
+    background-color: black;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    font-size: large;
+    font-weight: bold;
+}
+
+.bmiButton:hover{
+    cursor: pointer;
+    background-color: rgb(36, 35, 35);
+}
+
+.blue{
+    color: blue;
+    font-weight: bold;
+}
+
+.bold{
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.BMIDisplay{
+    margin-top: 20px;
+}
+
