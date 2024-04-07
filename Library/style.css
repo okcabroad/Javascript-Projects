@@ -1,0 +1,86 @@
+body{
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.topSection{
+    background-color: lightgray;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 50px;
+}
+
+.libraryHeader{
+    font-weight: bolder;
+    font-size: xx-large;
+}
+
+.addBook{
+    background-color: rgb(41, 41, 41);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    font-weight: bolder;
+    font-size: large;
+}
+
+.bottomSection{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    margin: 50px;
+    
+}
+
+.booksHeaderContainer{
+    width: 100vw;
+}
+
+.booksHeader{
+    font-size: xx-large;
+    padding: 20px;
+}
+
+.card{
+    margin-top: 20px;
+    background-image: url('library.jpg');
+    width: 200px;
+    height: 200px;
+    padding: 20px;
+    border-radius: 10px;
+    margin-right: 40px;
+    box-shadow: 
+        0 3px 5px rgba(0, 0, 0, 0.2), /* bottom shadow */
+        0 5px 15px rgba(0, 0, 0, 0.9); /* top shadow */
+}
+
+.bookContainer{
+
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.inputForm{
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    background-color: lightgray;
+    align-items: flex-start;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.inputSection{
+    display: flex;
+    justify-content: center;
+}
+
+.hide{
+    display: none;
+}
