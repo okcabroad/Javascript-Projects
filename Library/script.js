@@ -2,7 +2,9 @@
 const addBook =document.querySelector('.addBook');
 const bottomSection = document.querySelector('.bottomSection');
 const inputSection = document.querySelector('.inputSection');
-addBook.addEventListener('click', addBookFunction)
+
+addBook.addEventListener('click', addBookFunction);
+
 
 //Book let variables
 let title = '';
@@ -64,11 +66,20 @@ function submitForm(){
                 <div class="readContainer">
                     <input type="checkbox" class="checkbox" ${read ? 'checked' : ''}>
                     <label for="checkbox">Read</label>
+                    <button class="removeBook">Remove</button>
                 </div>
             </div>
         </div>
     </div>
 
     `
+    const removeButtons = document.querySelectorAll('.removeBook');
+    removeButtons.forEach(removeButton => {
+        removeButton.addEventListener('click', removeBookFunction);
+    })
+}
 
+function removeBookFunction(event) {
+    const card = event.target.closest('.card');
+    card.remove();
 }

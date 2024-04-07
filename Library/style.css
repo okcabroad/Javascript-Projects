@@ -26,6 +26,11 @@ body{
     font-size: large;
 }
 
+.addBook:hover{
+    cursor: pointer;
+    background-color: rgb(70, 70, 70);
+}
+
 .bottomSection{
     height: 100vh;
     width: 100vw;
@@ -83,4 +88,17 @@ body{
 
 .hide{
     display: none;
+}
+
+.removeBook{
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color:  rgb(41, 41, 41);
+    color: white;
+}
+
+.removeBook:hover{
+    cursor: pointer;
+    background-color: rgb(70, 70, 70);
 }
