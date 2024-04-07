@@ -34,12 +34,41 @@ function addBookFunction(){
     `
     const submitBook = document.querySelector('.submitBook');
     submitBook.addEventListener('click', submitForm);
+
 }
 
 function hide(element){
     element.classList.add('hide');
 }
 
+function removeHide(element){
+    element.classList.remove('hide');
+}
+
 function submitForm(){
-    console.log('submit Book');
+    title = document.querySelector('.bookTitleInput').value;
+    author = document.querySelector('.bookAuthorInput').value;
+    pageNumber = document.querySelector('.bookPageNumberInput').value;
+    read = document.querySelector('.checkboxInput').checked;
+
+    inputSection.innerHTML = '';
+    removeHide(bottomSection);
+
+    bottomSection.innerHTML += `
+    <div class="card">
+        <div class="bookContainer">
+            <div class="bookText">
+                <p class="bookTitle"><i>${title}</i></p>
+                <p class="bookAuthor">${author}</p>
+                <p class="bookPageNumber">${pageNumber}</p>
+                <div class="readContainer">
+                    <input type="checkbox" class="checkbox" ${read ? 'checked' : ''}>
+                    <label for="checkbox">Read</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    `
+
 }
