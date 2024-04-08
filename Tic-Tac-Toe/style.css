@@ -19,7 +19,6 @@ h1{
   }
 
 .grid-item {
-    background-color: #e7e7e7;
     padding: 20px;     
     display: flex;
     justify-content: center;
@@ -43,3 +42,8 @@ h1{
     font-size: xx-large;
 }
 
+.alignCenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
