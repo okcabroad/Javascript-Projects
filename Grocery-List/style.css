@@ -9,6 +9,7 @@ body{
 }
 
 .container{
+    display: block;
     background-color: white;
     padding: 40px;
     border-radius: 10px;
@@ -24,8 +25,16 @@ body{
     margin-left: 0px;
 }
 
-.elementsContainer{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.elementContainer{
+    width: 400px;
+    display: inline-block;
+    background-color: blue;
+}
+
+.add{
+    display: inline;
+
+}
+.remove{
+    display: inline;
 }
