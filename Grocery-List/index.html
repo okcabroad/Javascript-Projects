@@ -9,20 +9,24 @@
 <body>
 
     <div class="container">
-        <h1>Grocery List</h1>
+        <h1>🛒Grocery List</h1>
         <div class="inputContainer">
             <input type="text" id="input" placeholder="e.g. eggs">
-            <button for="input" class="submit">Submit</button>
+            <button for="input" class="submit buttons">Submit</button>
+            <button for="input" class="clear buttons">Clear</button>
         </div>
         <div class="listContainer">
+            <br>
             <div class="elementContainer">
-                <div>Bacon</div>
-                <button class="add">add</button>
-                <button class="remove">Remove</button>
+                <div class="textElement">○ Bacon</div>
+                <div class="buttonsElement">
+                    <button class="remove buttons">Remove</button>
+                </div>
             </div>
 
         </div>
-        <button id="clearItems">Clear Items</button>
+        <br>
+        <button id="clearItems" class="buttons">Clear Items</button>
     </div>
     
     <script src="script.js"></script>
