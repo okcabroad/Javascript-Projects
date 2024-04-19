@@ -38,3 +38,20 @@ h1{
 .price{
     color: brown;
 }
+
+.buttonContainer{
+    display: flex;
+    justify-content: center;
+}
+
+button{
+    background-color: brown;
+    color: white;
+    border-radius: 5px;
+    padding:20px;
+    border-color: black
+}
+
+button:hover{
+    cursor: pointer;
+}
