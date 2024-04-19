@@ -19,6 +19,7 @@ body {
 
 h1{
     font-size: xxx-large;
+    text-align: center;
 }
 
 .menuObject{
@@ -32,4 +33,8 @@ h1{
     font-weight: bolder;
     font-size: large;
 
+}
+
+.price{
+    color: brown;
 }
